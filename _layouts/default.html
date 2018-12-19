@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 	<html>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
 		<head>
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
+			<!-- <link rel="stylesheet" type="text/css" href="/css/main.css"> -->
 		</head>
 		<body>
 
-			<div class="topnav">
-			  <a class="active" href="#home">Home</a>
-			  <a href="#news">News</a>
-			  <a href="#contact">Contact</a>
-			  <a href="#about">About</a>
-			</div>
+			<!-- Navigation -->
+			<nav class="w3-bar w3-black">
+			  <a href="#home" class="w3-button w3-bar-item">Home</a>
+			  <a href="#Publications" class="w3-button w3-bar-item">Band</a>
+			  <a href="#Projects" class="w3-button w3-bar-item">Tour</a>
+			</nav>
 
 			<div class="container">
 			{{ content }}
 			</div><!-- /.container -->
-			
+
 			<footer>
 	    		<ul>
 	        		<li><a href="mailto:mawad@ucdavis.edu">email</a></li>
-	        		<li><a href="https://github.com/maawad">github.com/maawad</a></li>
+	        		<!-- <li><a href="https://github.com/maawad">github.com/maawad</a></li> -->
 				</ul>
 			</footer>
 		</body>
