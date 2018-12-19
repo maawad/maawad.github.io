@@ -1,4 +1,9 @@
-table, th, td {
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+timg {
   border: 1px solid black;
   border-collapse: collapse;
 }
