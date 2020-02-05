@@ -3,3 +3,4 @@ markdown: kramdown
 
 # Google Analytics
 google_analytics: UA-131252048-1
+theme: jekyll-theme-midnight
