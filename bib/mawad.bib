@@ -1,0 +1,130 @@
+@inproceedings{Awad:2020:DGO,
+  author    = {Muhammad A. Awad and Saman Ashkiani and Serban D.
+                  Porumbescu and John D. Owens},
+  title     = {Dynamic Graphs on the {GPU}},
+  booktitle = {Proceedings of the 34th IEEE International Parallel and
+                  Distributed Processing Symposium},
+  series    = {IPDPS 2020},
+  year      = 2020,
+  month     = may,
+  pages     = {739--748},
+  doi       = {10.1109/IPDPS47924.2020.00081},
+  url       = {https://escholarship.org/uc/item/48j4k7np}
+}
+
+@inproceedings{Awad:2019:EAH,
+  author     = {Muhammad A. Awad and Saman Ashkiani and Rob Johnson and
+                  Mart\'{\i}n Farach-Colton and John D. Owens},
+  title      = {Engineering a High-Performance {GPU} {B}-Tree},
+  booktitle  = {Proceedings of the 24th ACM SIGPLAN Symposium on
+                  Principles and Practice of Parallel Programming},
+  series     = {PPoPP 2019},
+  year       = 2019,
+  month      = feb,
+  pages      = {145--157},
+  acceptance = {29 of 152 submissions, 19.1\%},
+  doi        = {10.1145/3293883.3295706},
+  url        = {https://escholarship.org/uc/item/1ph2x5td},
+  code       = {https://github.com/owensgroup/GpuBTree},
+  ucdcite    = {a127}
+}
+
+
+@article{Mitchell:2018:SDF,
+  author    = {Mitchell, Scott A. and Ebeida, Mohamed S. and Awad, Muhammad A. and Park, Chonhyon and Patney, Anjul and Rushdi, Ahmad A. and Swiler, Laura P. and Manocha, Dinesh and Wei, Li-Yi},
+  title     = {Spoke-Darts for High-Dimensional Blue-Noise Sampling},
+  year      = {2018},
+  issn      = {0730-0301},
+  url       = {https://doi.org/10.1145/3194657},
+  doi       = {10.1145/3194657},
+  journal   = {ACM Transactions on Graphics},
+  month     = may,
+  articleno = {22},
+  numpages  = {20},
+  keywords  = {blue noise, Line sampling, high dimension, motion planning, global optimization, Delaunay graph}
+}
+
+@article{Ebeida:2016:DDT,
+  author     = {Mohamed S. Ebeida and Ahmad A. Rushdi and Muhammad A. Awad
+                  and Ahmed H. Mahmoud and Dong-Ming Yan and Shawn A. English
+                  and John D. Owens and Chandrajit L. Bajaj and Scott A.
+                  Mitchell},
+  title      = {Disk Density Tuning of a Maximal Random Packing},
+  journal    = {Computer Graphics Forum},
+  series     = {SGP 2016},
+  volume     = 35,
+  number     = 5,
+  year       = 2016,
+  month      = jun,
+  pages      = {259--269},
+  note       = {Proceedings of the Symposium on Geometry Processing},
+  doi        = {10.1111/cgf.12981},
+  url        = {http://www.sandia.gov/~samitch/papers/disk-tuning-paper.pdf},
+  acceptance = {32\% (26/81)},
+  ucdcite    = {a105}
+}
+
+@article{Awad:2016:AHM,
+  title    = {All-Hex Meshing of Multiple-Region Domains without Cleanup},
+  journal  = {Procedia Engineering},
+  volume   = {163},
+  pages    = {251-261},
+  year     = {2016},
+  note     = {25th International Meshing Roundtable},
+  issn     = {1877-7058},
+  doi      = {https://doi.org/10.1016/j.proeng.2016.11.055},
+  url      = {https://www.sciencedirect.com/science/article/pii/S1877705816333628},
+  author   = {Muhammad A. Awad and Ahmad A. Rushdi and Misarah A. Abbas and Scott A. Mitchell and Ahmed H. Mahmoud and Chandrajit L. Bajaj and Mohamed S. Ebeida},
+  keywords = {All-hexahedral Meshing, Mesh Generation, Guaranteed Quality}
+}
+
+@article{Ebeida:2013:SD,
+  author     = {Mohamed S. Ebeida and Ahmed H. Mahmoud and Muhammad A.
+                  Awad and Mohammed A. Mohammed and Scott A. Mitchell and
+                  Alex Rand and John D. Owens},
+  title      = {Sifted Disks},
+  journal    = {Computer Graphics Forum},
+  year       = 2013,
+  volume     = 32,
+  number     = 2,
+  month      = may,
+  pages      = {509--518},
+  acceptance = {52/205 (25.3\%)},
+  doi        = {10.1111/cgf.12071},
+  url        = {https://cfwebprod.sandia.gov/cfdocs/CCIM/docs/SiftedDisks_final.pdf},
+  ucdcite    = {a86}
+}
+
+@article{Ebeida:2014:ISC,
+  title    = {Improving spatial coverage while preserving the blue noise of point sets},
+  journal  = {Computer-Aided Design},
+  volume   = {46},
+  pages    = {25-36},
+  year     = {2014},
+  note     = {2013 SIAM Conference on Geometric and Physical Modeling},
+  issn     = {0010-4485},
+  doi      = {https://doi.org/10.1016/j.cad.2013.08.015},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0010448513001553},
+  author   = {Mohamed S. Ebeida and Muhammad A. Awad and Xiaoyin Ge and Ahmed H. Mahmoud and Scott A. Mitchell and Patrick M. Knupp and Li-Yi Wei},
+  keywords = {Optimization, Voronoi aspect ratio, Disk, Triangulation},
+  abstract = {We explore the notion of a Well-spaced Blue-noise Distribution (WBD) of points, which combines two desirable properties. First, the point distribution is random, as measured by its spectrum having blue noise. Second, it is well-spaced in the sense that the minimum separation distance between samples is large compared to the maximum coverage distance between a domain point and a sample, i.e. its Voronoi cell aspect ratios 2βi are small. It is well known that maximizing one of these properties destroys the other: uniform random points have no aspect ratio bound, and the vertices of an equilateral triangular tiling have no randomness. However, we show that there is a lot of room in the middle to get good values for both. Maximal Poisson-disk sampling provides β=1 and blue noise. We show that a standard optimization technique can improve the well-spacedness while preserving randomness. Given a random point set, our Opt-βi  algorithm iterates over the points, and for each point locally optimizes its Voronoi cell aspect ratio 2βi. It can improve βi to a large fraction of the theoretical bound given by a structured tiling: improving from 1.0 to around 0.8, about half-way to 0.58, while preserving most of the randomness of the original set. In terms of both β and randomness, the output of Opt-βi  compares favorably to alternative point improvement techniques, such as centroidal Voronoi tessellation with a constant density function, which do not target β directly. We demonstrate the usefulness of our output through meshing and filtering applications. An open problem is constructing from scratch a WBD distribution with a guarantee of β<1.}
+}
+
+@incollection{Ebeida:2014:EIH,
+  author    = {Mohamed Ebeida and Scott Mitchell and Anjul Patney and
+                  Andrew Davidson and Stanley Tzeng and Muhammad Awad and
+                  Ahmed Mahmoud and John D. Owens},
+  title     = {Exercises in High-Dimensional Sampling: Maximal
+                  {P}oisson-disk Sampling and $k$-d Darts},
+  booktitle = {Topological and Statistical Methods for Complex Data --
+                  Tackling Large-Scale, High-Dimensional, and Multivariate
+                  Data Sets},
+  publisher = {Springer},
+  year      = 2014,
+  month     = nov,
+  editor    = {Janine Bennett and Fabien Vivodtzev and Valerio Pascucci},
+  pages     = {221--238},
+  doi       = {10.1007/978-3-662-44900-4_13},
+  url       = {http://escholarship.org/uc/item/64f9c6h3},
+  ucdcite   = {a92}
+}
