@@ -1,16 +1,359 @@
----
-layout: default
-title: Muhammad Awad
----
-<div class="blurb">
-	<!-- Home -->
-	<h2 class="w3-wide">HOME</h2>
-		<p class="w3-justify">
-		Muhammad Awad is a Ph.D. student in the Electrical and Computer Engineering Department at the University of California, Davis. He received his B.Sc. degree in Naval Architecture and Marine Engineering from the Faculty of Engineering, Alexandria University, Egypt in 2013. After receiving his bachelor's degree, he worked for two years as a part-time teaching assistant at the Arab Academy for Science, Technology, and Maritime Transport, in addition to doing research on point sampling, and mesh generation and optimization. Currently, he is working on his Ph.D. under the supervision of Professor John D. Owens. His research interests include parallel computing, dynamic GPU data structures, and computer graphics.
-	 	</p>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 
-	 	<p class="w3-justify">
-	 	My  <a href="/resume/cv.pdf" class="">resume</a>.
-	 	</p>
-	</section>
-</div><!-- /.blurb -->
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131252048-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131252048-1');
+    </script>
+
+
+    <title>Muhammad Awad's Homepage</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="Muhammad Awad's Homepage">
+    <meta name="keywords" content="Muhammad Awad">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/pub.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+    <script type="text/javascript">
+        function AppendLinkToText(text, link, mustHaveLink) {
+            var html = ""
+            if (mustHaveLink && link.length == 0) {
+                return html;
+            }
+            if (text.length != 0) {
+                if (link.length != 0) {
+                    html += '<a href=' + link + '>';
+                }
+                html += text;
+                if (link.length != 0) {
+                    html += '</a>';
+                }
+            }
+            return html;
+        }
+        function HighlightText(text, lookfor) {
+            String.prototype.splice = function (idx, rem, str) {
+                return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+            };
+            var beg = text.indexOf(lookfor);
+            var end = beg + lookfor.length;
+            text = text.splice(end, 0, "</b>");
+            text = text.splice(beg, 0, "<b>");
+            return text;
+        }
+        function Publication(publicationJSON) {
+            this.json = publicationJSON;
+            this.toHtml = function () {
+                var html = "";
+                html += '<div class=\'thumb image\'>';
+                html += '<div style=\'padding-top:16px\'>';
+                if (String(this.json.url).length != 0) {
+                    html += '<a href=' + this.json.url + '>';
+                }
+                html += '<img width="80px" height="60px" src=' + this.json.icon + ' alt=\'PAPER\'/>';
+                if (this.json.url.length != 0) {
+                    html += '</a>';
+                }
+                html += '</div>';
+                html += '</div>';
+                html += '<div class=\'ref\'>';
+                html += '<div class=\'title\'>';
+                if (this.json.url.length != 0) {
+                    html += '<a href=' + this.json.url + '>';
+                }
+                html += this.json.title;
+                if (this.json.url.length != 0) {
+                    html += '</a> &nbsp;';
+                }
+                html += '</div>';
+                html += '<div class=\'authors\'>';
+                if (this.json.hasOwnProperty('authors')) {
+                    html += HighlightText(this.json.authors, 'Muhammad A. Awad');
+                } else if (this.json.hasOwnProperty('author')) {
+                    html += HighlightText(this.json.author, 'Muhammad A. Awad');
+                }
+                html += '</div>';
+
+                html += '<div class=\'links\'>';
+                html += "<i>";
+                if (this.json.hasOwnProperty('series')) {
+                    html += this.json.series;
+                } else if (this.json.hasOwnProperty('journal')) {
+                    html += this.json.journal + " " + this.json.year;
+                } else if (this.json.hasOwnProperty('booktitle')) {
+                    html += "Chapter in the book \"" + this.json.booktitle + "\" " + this.json.year;
+                }
+                html += "</i>";
+
+                // html += '</div>';
+
+                // html += '<div class=\'links\'>';
+                if (this.json.hasOwnProperty('url')) {
+                    hyperLink = AppendLinkToText("http", this.json.url, true);
+                    if (hyperLink.length != 0) {
+                        html += " [" + AppendLinkToText("http", this.json.url, true);
+                    }
+                }
+                if (this.json.hasOwnProperty('talk')) {
+                    hyperLink = AppendLinkToText("talk", this.json.talk, true);
+                    if (hyperLink.length != 0) {
+                        html += " | " + AppendLinkToText("talk", this.json.talk, true);
+                    }
+                }
+                if (this.json.hasOwnProperty('slides_pdf')) {
+                    hyperLink = AppendLinkToText("slides pdf", this.json.slides_pdf, true);
+                    if (hyperLink.length != 0) {
+                        html += " | " + AppendLinkToText("slides pdf", this.json.slides_pdf, true);
+                    }
+                }
+                if (this.json.hasOwnProperty('slides_ppt')) {
+                    hyperLink = AppendLinkToText("slides ppt", this.json.slides_ppt, true);
+                    if (hyperLink.length != 0) {
+                        html += " | " + AppendLinkToText("slides ppt", this.json.slides_ppt, true);
+                    }
+                }
+
+                if (this.json.hasOwnProperty('code')) {
+                    hyperLink = AppendLinkToText("code", this.json.code, true);
+                    if (hyperLink.length != 0) {
+                        html += " | " + AppendLinkToText("code", this.json.code, true);
+                    }
+                }
+                html += "]"
+                html += '</div>';
+                html += '</div>';
+                html += '<hr />';
+                return html;
+            }
+        }
+
+
+
+        function initAllPublications(pubs) {
+            var json = new Array();
+            json.push('{                                       \
+                "authors": "Muhammad A. Awad, Saman Ashkiani, Serban D. Porumbescu, and John D. Owens",\
+                "title": "Dynamic Graphs on the GPU", \
+                "booktitle": "Proceedings of the 34th IEEE International Parallel and Distributed Processing Symposium", \
+                "series":"IPDPS 2020",\
+                "year" : "2020",\
+                "url" : "https://escholarship.org/uc/item/48j4k7np",\
+                "slides_ppt": "https://github.com/maawad/maawad.github.io/raw/master/talks/GpuDynamicGraphs_IPDPS20.pptx", \
+                "slides_pdf": "https://github.com/maawad/maawad.github.io/blob/master/talks/GpuDynamicGraphs_IPDPS20.pdf", \
+                "talk": "https://youtu.be/gRq2GAgCK_E",\
+                "icon": "publications/gpu-dynamic-graphs.png"\
+             } ');
+            json.push('{ \
+            "authors": "Muhammad A. Awad, Saman Ashkiani, Rob Johnson, Martin Farach-Colton, and John D. Owens", \
+            "title": "Engineering a High-Performance GPU B-Tree", \
+            "booktitle": "Proceedings of the 34th IEEE International Parallel and Distributed Processing Symposium", \
+            "series":"PPoPP 2019",\
+            "year": "2019",\
+            "url": "https://escholarship.org/uc/item/1ph2x5td",\
+            "slides_ppt": "https://github.com/maawad/maawad.github.io/blob/master/talks/BTree_19.pptx",\
+            "talk": "", \
+            "code":  "https://github.com/owensgroup/GpuBTree", \
+            "icon": "publications/btree.png"\
+            } ');
+
+            json.push('{ \
+            "authors": " Scott A. Mitchell,Mohamed S. Ebeida, Muhammad A. Awad, Chonhyon Park, Anjul Patney, Ahmad A. Rushdi, Laura P. Swiler, Dinesh Manocha, and Li-Yi Wei", \
+            "title": "Spoke-Darts for High-Dimensional Blue-Noise Sampling", \
+            "year": "2018",\
+            "url": "https://doi.org/10.1145/3194657",\
+            "journal"   : "ACM Transactions on Graphics",\
+            "talk": "", \
+            "icon": "publications/spokedarts.png"\
+            } ');
+
+            json.push('{ \
+            "authors"     : "Mohamed S. Ebeida, Ahmad A. Rushdi, Muhammad A. Awad, Ahmed H. Mahmoud, Dong-Ming Yan, Shawn A. English, John D. Owens, Chandrajit L. Bajaj and Scott A. Mitchell", \
+            "title"      : " Disk Density Tuning of a Maximal Random Packing", \
+            "journal"    : " Computer Graphics Forum", \
+            "series"     : " SGP 2016", \
+            "volume"     : " 3", \
+            "number"     : " ", \
+            "year"       : " 201", \
+            "month"      : " ju", \
+            "pages"      : " 259--269", \
+            "note"       : " Proceedings of the Symposium on Geometry Processing", \
+            "doi"        : " 10.1111/cgf.12981", \
+            "url"        : " http://www.sandia.gov/~samitch/papers/disk-tuning-paper.pdf", \
+            "ucdcite"    : " a10",\
+            "icon": "publications/disk-tuning.png"\
+              } ');
+
+            json.push('{ \
+            "title"    : "All-Hex Meshing of Multiple-Region Domains without Cleanup", \
+            "journal"  : "25th International Meshing Roundtable", \
+            "volume"   : "163", \
+            "pages"    : "251-261", \
+            "year"     : "2016", \
+            "issn"     : "1877-7058", \
+            "doi"      : "https://doi.org/10.1016/j.proeng.2016.11.055", \
+            "url"      : "https://www.sciencedirect.com/science/article/pii/S1877705816333628", \
+            "author"   : "Muhammad A. Awad, Ahmad A. Rushdi, Misarah A. Abbas, Scott A. Mitchell, Ahmed H. Mahmoud, Chandrajit L. Bajaj, and Mohamed S. Ebeida", \
+            "keywords" : "All-hexahedral Meshing, Mesh Generation, Guaranteed Quality",\
+            "icon": "publications/allhex.png"\
+            } ');
+
+            json.push('{ \
+            "author" : "Mohamed S. Ebeida, Ahmed H. Mahmoud, Muhammad A. Awad, Mohammed A. Mohammed, Scott A. Mitchell, Alex Rand, and John D. Owens",\
+            "title" : "Sifted Disks",\
+            "journal" : "Computer Graphics Forum (Eurographics)",\
+            "year" : "2013",\
+            "volume" : "32",\
+            "number" : "2",\
+            "month" : "may",\
+            "pages" : "509--518",\
+            "doi" : "10.1111/cgf.12071",\
+            "url" : "https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.12071",\
+            "icon": "publications/siftedDisks.png",\
+            "ucdcite" : "a86"\
+             } ');
+
+
+            json.push('{ \
+            "title"   : "Improving spatial coverage while preserving the blue noise of point sets", \
+            "volume"   : "46", \
+            "pages"    : "25-36", \
+            "year"     : "2014", \
+            "journal"     : "2013 SIAM Conference on Geometric and Physical Modeling", \
+            "issn"     : "0010-4485", \
+            "doi"      : "https://doi.org/10.1016/j.cad.2013.08.015", \
+            "url"      : "https://www.sciencedirect.com/science/article/pii/S0010448513001553", \
+            "author"   : "Mohamed S. Ebeida, Muhammad A. Awad, Xiaoyin Ge, Ahmed H. Mahmoud, Scott A. Mitchell, Patrick M. Knupp, and Li-Yi Wei", \
+            "keywords" : "Optimization, Voronoi aspect ratio, Disk, Triangulation",\
+            "icon": "publications/SparseMPS.png"\
+            } ');
+
+            json.push('{ \
+            "author"    :"Mohamed S. Ebeida, Scott A. Mitchell, Anjul Patney, Andrew Davidson, Stanley Tzeng, Muhammad A. Awad, Ahmed H. Mahmoud, and John D. Owens",\
+            "title"     :"Exercises in High-Dimensional Sampling: Maximal Poisson-disk Sampling and k-d Darts",\
+            "booktitle" :"Topological and Statistical Methods for Complex Data Tackling Large-Scale, High-Dimensional, and Multivariate Data Sets",\
+            "publisher" :"Springer",\
+            "year"      :"2014",\
+            "month"     :"nov",\
+            "editor"    :"Janine Bennett and Fabien Vivodtzev and Valerio Pascucci",\
+            "pages"     :"221--238",\
+            "doi"       :"10.1007/978-3-662-44900-4_13",\
+            "url"       :"http://escholarship.org/uc/item/64f9c6h3",\
+            "ucdcite"   :"a9",\
+            "icon": "publications/book_chapter.png"\
+        } ');
+
+            json.forEach(function (element, index, json) {
+                json[index] = (JSON.parse(element));
+            });
+            json.sort(function (a, b) {
+                var x = a.year;
+                var y = b.year;
+                return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+            });
+
+            json.forEach(element => pubs[pubs.length] = new Publication(element));
+        }
+
+        function allPubsInHTML() {
+            var myPubs = [];
+            initAllPublications(myPubs);
+            var htmlPubs = "";
+            htmlPubs += '<div id=\'content\'>';
+            htmlPubs += '<div class=\'results list\'>';
+            for (index = 0; index < myPubs.length; index++) {
+                htmlPubs += myPubs[index].toHtml();
+            }
+            htmlPubs += '</div>';
+            htmlPubs += '</div>';
+            return htmlPubs;
+        }
+        function updatePubListWithAll() {
+            var s = allPubsInHTML();
+            document.getElementById("pubListDiv").innerHTML = s;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <table border="0" width="70%">
+            <tr>
+                <td><img alt="Photo" height="140px" src="images/mawad-2020.JPG"></td>
+                <td>
+                    <h1>Muhammad Awad's Homepage</h1>
+                    <p>
+                        <i>Davis, CA, USA<br>
+                            <br>
+                            e-mail: <a href="mailto:mawad@ucdavis.edu"><i>mawad@ucdavis.edu</i></a>
+                            <br>
+                            www: <a href="https://maawad.github.io">https://maawad.github.io</a>
+                            <br>
+                            <a href="resume/cv.pdf">CV (pdf) </a>|
+                            <a href="https://github.com/maawad">GitHub</a> |
+                            <a href="https://www.linkedin.com/in/muhammad-awad-b1a28046">LinkedIn</a> |
+                            <a href="https://scholar.google.com/citations?user=9e0mCHIAAAAJ&hl=en">Google Scholar</a>
+                        </i><br>
+                        <!-- <nav>
+                                                            <ul>
+                                                                <li><a href=#bio>Bio</a></li>
+                                                                <li><a href=#pub>Publications</a></li>
+                                                            </ul>
+                                                        </nav> -->
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+    </header>
+
+    <section>
+        <h1 id="bio">Biography</h1>
+        <p>
+            Muhammad Awad is a Ph.D. candidate in the <a href="https://ece.ucdavis.edu/"> Electrical and Computer
+                Engineering Department </a> at the <a href="https://www.ucdavis.edu/">University of California,
+                Davis</a>. He received his B.Sc. degree in Naval Architecture and Marine Engineering from the<a
+                href="https://eng.alexu.edu.eg/index.php/en/"> Faculty of Engineering, Alexandria University</a>, Egypt
+            in 2013. After receiving his bachelor's degree, he
+            worked for two years as a part-time teaching assistant at the <a
+                href="https://www.aast.edu/en/index.php">Arab Academy for Science, Technology, and
+                Maritime Transport</a>, in addition to doing research on point sampling, and mesh generation and
+            optimization.
+            Currently, he is working on his Ph.D. under the supervision of Professor <a
+                href="https://www.ece.ucdavis.edu/~jowens/"> John D. Owens</a>. His research
+            interests include parallel computing, dynamic GPU data structures, and computer graphics.
+
+        </p>
+
+        <h1 id="pub">Publications</h1>
+
+        <div id="pubListDiv">
+            <div id="pubListDiv">
+                <script>updatePubListWithAll()</script>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <footer>
+                                            <nav>
+                                                <ul>
+                                                    <li><a href=#bio>Bio</a></li>
+                                                    <li><a href=#pub>Publications</a></li>
+                                                </ul>
+                                            </nav>
+                                        </footer> -->
+
+</body>
+
+</html>
